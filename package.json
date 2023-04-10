@@ -1,0 +1,11 @@
+{
+  "name": "my-finance-backend",
+  "version": "1.0.0",
+  "description": "Backend server program for my finance app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "James Suresh",
+  "license": "ISC"
+}
