@@ -19,7 +19,7 @@ async function connect(){
     }
 }
 
-connect()
+//connect()
 const users=[]
 
 app.post('/users/register', async (req, res) => {
@@ -76,9 +76,10 @@ app.post('/users/register', async (req, res) => {
     res.send('Hello World!')
   })
   
-mongoose.connection.once('open',()=>{
+//mongoose.connection.once('open',()=>{
     console.log("Connected to mongodb")
-    app.listen(port, () => {
-        console.log(`Example app listening on port ${port}`)
-      })
+   
+//})
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
 })
