@@ -73,13 +73,13 @@ app.post('/users/register', async (req, res) => {
   })
   
   app.get('/', (req, res) => {
-    res.send('Hello World!'+process.env.TEST)
+    res.send('MyFinance Server')
   })
   
 mongoose.connection.once('open',()=>{
     console.log("Connected to mongodb")
     app.listen(port, () => {
-      console.log(`Example app listening on port ${port}`)
+      console.log(`MyFinance app listening on port ${port}`)
     })
    
 })
