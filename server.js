@@ -8,7 +8,7 @@ app.use(cors())
 app.use(express.json());
 const User = require('./models/User');
 require('dotenv').config();
-const port = process.env.PORT
+const port = process.env.PORT || 80
 const uri = process.env.MDB_URI
 
 async function connect(){
