@@ -9,7 +9,7 @@ app.use(express.json());
 //const User = require('./models/User');
 require('dotenv').config();
 const port = process.env.PORT || 80
-//const uri = process.env.MDB_URI
+const uri = process.env.MDB_URI
 
 // async function connect(){
 //     try {
@@ -73,7 +73,7 @@ app.post('/users/register', async (req, res) => {
   })
   
   app.get('/', (req, res) => {
-    res.send('Hello World!')
+    res.send('Hello World!'+process.env.TEST)
   })
   
 //mongoose.connection.once('open',()=>{
