@@ -57,7 +57,8 @@ app.post('/users/register', async (req, res) => {
         res.status(201).json(
             {
                 message: "Login Successful",
-                
+                username: user.username,
+                id: user.id 
             }
         ) 
        
