@@ -9,15 +9,15 @@ app.use(express.json());
 const User = require('./models/User');
 require('dotenv').config();
 const port = process.env.PORT || 80
-const uri = process.env.MDB_URI
+//const uri = process.env.MDB_URI
 
-async function connect(){
-    try {
-        await mongoose.connect(uri)
-    } catch (error) {
-        console.error(error)
-    }
-}
+// async function connect(){
+//     try {
+//         await mongoose.connect(uri)
+//     } catch (error) {
+//         console.error(error)
+//     }
+// }
 
 //connect()
 const users=[]
