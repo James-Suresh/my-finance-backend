@@ -32,7 +32,7 @@ app.post('/users/register', async (req, res) => {
     }
     try {
       const hashedPassword = await bcrypt.hash(req.body.password, 10)
-      const new_user = await User.create({ username: req.body.username, password: hashedPassword })
+      const new_user = await User.create({ username: req.body.username, password: hashedPassword, money: 10000 })
       console.log("test"+new_user)
       console.log(new_user.id)
       res.status(201).send("Account successfully created")
@@ -57,8 +57,7 @@ app.post('/users/register', async (req, res) => {
         res.status(201).json(
             {
                 message: "Login Successful",
-                username: user.username,
-                id: user.id 
+                user: user
             }
         ) 
        
