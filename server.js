@@ -6,20 +6,20 @@ const app = express()
 const bcrypt = require('bcrypt')
 app.use(cors())
 app.use(express.json());
-//const User = require('./models/User');
+const User = require('./models/User');
 require('dotenv').config();
 const port = process.env.PORT || 80
-const uri = process.env.MDB_URI
+const uri = process.env.CUSTOMCONNSTR_MDB
 
-// async function connect(){
-//     try {
-//         await mongoose.connect(uri)
-//     } catch (error) {
-//         console.error(error)
-//     }
-// }
+async function connect(){
+    try {
+        await mongoose.connect(uri)
+    } catch (error) {
+        console.error(error)
+    }
+}
 
-//connect()
+connect()
 const users=[]
 
 app.post('/users/register', async (req, res) => {
@@ -76,10 +76,10 @@ app.post('/users/register', async (req, res) => {
     res.send('Hello World!'+process.env.TEST)
   })
   
-//mongoose.connection.once('open',()=>{
+mongoose.connection.once('open',()=>{
     console.log("Connected to mongodb")
+    app.listen(port, () => {
+      console.log(`Example app listening on port ${port}`)
+    })
    
-//})
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
 })
